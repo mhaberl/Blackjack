@@ -7,10 +7,10 @@ class Card
     end
 
     def print
-        puts name
+        $stdout.print to_s
     end
 
-    def name
+    def to_s
         @suite + ' ' + @value
     end
 end

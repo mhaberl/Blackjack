@@ -9,7 +9,7 @@ class CardDeck
         @cards = @suites.product(@values).collect {|s,v| Card.new s, v}
     end
 
-    def deal
+    def shuffle
         randomCards=[]
         (1..52).to_a.sample(52).each {|i| randomCards.push @cards[i-1]}
         randomCards
