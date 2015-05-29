@@ -1,4 +1,4 @@
-class CardDeck
+class Deck
 
     attr :suites, :values, :cards
     def initialize

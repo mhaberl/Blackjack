@@ -1,6 +1,6 @@
 require_relative 'card.rb'
 
-class Player
+module Player
 
     attr :cards_in_hand
     def initialize
