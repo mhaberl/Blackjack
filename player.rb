@@ -2,9 +2,10 @@ require_relative 'card.rb'
 
 module Player
 
-    attr :cards_in_hand
-    def initialize
+    attr :cards_in_hand, :name
+    def initialize name
         @cards_in_hand=[]
+        @name=name
     end
 
     def take card

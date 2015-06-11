@@ -3,31 +3,33 @@ require_relative 'deck.rb'
 require_relative 'dealer.rb'
 require_relative 'human.rb'
 
-p1 = Human.new
 
-c1 = Card.new 'harts', 'A'
-c2 = Card.new 'harts', '9'
+number_of_decks = 2
+number_of_human_players = 1
+#number_of_computer_players = 0
 
-p1.take c1
-p1.take c2
+players = []
+dealer = Dealer.new
+players.push dealer
 
-print p1.hand
-print "\n"
+number_of_human_players.times do |i|
+    players.push Human.new 'Player ' + (i+1).to_s
+end
 
-p2 = Human.new
+dealer.prepare_new_game number_of_decks
 
-p2.take c1
-p2.take c1
-p2.take c2
+players.each do |p|
+    p.take dealer.cards.pop
+    p.take dealer.cards.pop
+end
 
-print p2.hand
-print "\n"
+players.each do |p|
+    print p.name
+    print "\n"
+    print p.cards_in_hand
+    print "\n"
+    print  p.hand
+    print "\n"
+    print "\n"
+end
 
-d = Dealer.new
-d.prepare_new_game 2
-
-d.take c1
-d.take c2
-
-print d.hand
-print "\n"

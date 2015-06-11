@@ -4,6 +4,9 @@ require_relative 'player.rb'
 class Dealer
 
     include Player
+    def initialize     
+        super 'Dealer'
+    end
 
     attr :cards
     def prepare_new_game(number_of_decks)
